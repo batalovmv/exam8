@@ -8,6 +8,8 @@ interface Props {
   category: string;
   author: string;
   name: string;
+  status: any;
+  onClose: any;
 }
 export default function Edit(props: Props) {
   const [info, setInfo] = useState([]);
@@ -16,13 +18,15 @@ export default function Edit(props: Props) {
   const [selectCategory, setSelectCategory] = useState(props.category);
   const [Pages, setPages] = useState([]);
 
-  const putInfo = () => {
-    axiosInfo.put(`/quotes/${props.name}.json`, {
+  const putInfo = async () => {
+    await axiosInfo.put(`/quotes/${props.name}.json`, {
       text: selectText,
       category: selectCategory,
       author: selectAuthor,
       time: Date.now(),
     });
+    props.status(false);
+    props.onClose();
   };
 
   // useEffect(() => {

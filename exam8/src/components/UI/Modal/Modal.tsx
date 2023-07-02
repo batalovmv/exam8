@@ -22,6 +22,7 @@ interface Props {
   author: string;
   category: string;
   name: string;
+  status: any;
 }
 
 export default function BasicModal(props: Props) {
@@ -48,9 +49,9 @@ export default function BasicModal(props: Props) {
               category={props.category}
               author={props.author}
               name={props.name}
+              status={props.status}
+              onClose={handleClose}
             />
-            Text : {props.text}
-            Data :{props.data}
           </Typography>
         </Box>
       </Modal>

@@ -12,37 +12,27 @@ interface Props {
 export default function Posts(props: Props) {
   const [info, setInfo] = useState([]);
   const [status, setStatus] = useState(true);
-  const [selectPage, setSelectPage] = useState("");
-  const [selectContent, setSelectContent] = useState("");
   const [Pages, setPages] = useState([]);
 
-  const getInfo = async () => {
+  const getInfo = () => {
     if (props.category) {
-      await axiosInfo
+      axiosInfo
         .get(`/quotes.json?orderBy="category"&equalTo="${props.category}"`)
         .then((response) => {
           setPages(Object.keys(response.data));
-          console.log(response.data);
           setInfo(response.data);
         });
     } else {
-      await axiosInfo.get(`/quotes/.json`).then((response) => {
+      axiosInfo.get(`/quotes/.json`).then((response) => {
         setPages(Object.keys(response.data));
-        console.log(response.data);
         setInfo(response.data);
       });
     }
   };
 
-  const reloadPage = (text: string) => {
-    setSelectPage(text);
-    getInfo();
-    setSelectContent(Object.values(info)[Pages.indexOf(text)].content);
-  };
-
   useEffect(() => {
     getInfo();
-  }, [status, props]);
+  }, [info, status]);
   return (
     <>
       <section className="hero">

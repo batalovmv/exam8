@@ -12,15 +12,12 @@ export default function BlockPost(props: Props) {
   const [data, setData] = useState({});
   const getInfo = async () => {
     await axiosInfo.get(`/quotes/${props.name}.json`).then((response) => {
-      console.log(response.data);
       setData(response.data);
     });
   };
   const removeInfo = async () => {
     props.status(false);
-    await axiosInfo.delete(`/quotes/${props.name}.json`).then((response) => {
-      console.log(response.data);
-    });
+    await axiosInfo.delete(`/quotes/${props.name}.json`).then((response) => {});
   };
 
   useEffect(() => {
@@ -32,13 +29,14 @@ export default function BlockPost(props: Props) {
         if (data) {
           return (
             <>
-              <div>Время :{data.author}</div>
-              <div>Заглавление : {data.text}</div>
+              <div>Автор :{data.author}</div>
+              <div>Текст : {data.text}</div>
               <BasicModal
                 text={data.text}
                 author={data.author}
                 category={data.category}
                 name={props.name}
+                status={props.status}
               />
               <NavLink to={`/`} className="site-title">
                 <button onClick={removeInfo}>Редактировать</button>
