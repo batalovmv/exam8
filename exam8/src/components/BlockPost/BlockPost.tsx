@@ -11,13 +11,13 @@ interface Props {
 export default function BlockPost(props: Props) {
   const [data, setData] = useState({});
   const getInfo = () => {
-    axiosInfo.get(`/posts/${props.name}.json`).then((response) => {
+    axiosInfo.get(`/quotes/${props.name}.json`).then((response) => {
       console.log(response.data);
       setData(response.data);
     });
   };
   const removeInfo = () => {
-    axiosInfo.delete(`/posts/${props.name}.json`).then((response) => {
+    axiosInfo.delete(`/quotes/${props.name}.json`).then((response) => {
       console.log(response.data);
       props.status(false);
     });
@@ -28,9 +28,9 @@ export default function BlockPost(props: Props) {
   }, []);
   return (
     <>
-      <div>Время :{data.time}</div>
-      <div>Заглавление : {data.title}</div>
-      <BasicModal text={data.content} title={data.title} />
+      <div>Время :{data.author}</div>
+      <div>Заглавление : {data.Text}</div>
+      <BasicModal text={data.Text} title={data.title} />
       <NavLink to={`/edit`} className="site-title">
         <button>Редактировать</button>
       </NavLink>

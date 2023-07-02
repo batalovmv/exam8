@@ -13,16 +13,10 @@ export default function Posts() {
   const [Pages, setPages] = useState([]);
 
   const getInfo = () => {
-    axiosInfo.get(`/posts/.json`).then((response) => {
+    axiosInfo.get(`/quotes/.json`).then((response) => {
       setPages(Object.keys(response.data));
       console.log(response.data);
       setInfo(response.data);
-    });
-  };
-  const putInfo = () => {
-    axiosInfo.put(`/${selectPage}.json`, {
-      content: selectContent,
-      title: selectPage,
     });
   };
 

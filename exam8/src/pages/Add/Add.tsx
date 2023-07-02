@@ -66,7 +66,7 @@ export default function Add() {
             onChange={(e) => setSelectText(e.target.value)}
           />
 
-          <NavLink to={`/posts`} className="site-title">
+          <NavLink to={`/`} className="site-title">
             <button type="submit" onClick={putInfo}>
               Обновить данные
             </button>
