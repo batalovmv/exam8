@@ -36,7 +36,7 @@ export default function Posts(props: Props) {
     <>
       <section className="hero">
         <div className="hero-content">
-          <h1>List of Posts</h1>
+          <h1>List of Posts {props.category}</h1>
           <NavList />
           {Pages.map((select) => {
             return (

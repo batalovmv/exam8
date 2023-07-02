@@ -24,11 +24,14 @@
 .block-post {
   display: flex;
   justify-content: space-between;
-  max-width: 500px;
+  max-width: 1000px;
   height: 100%;
   overflow: auto;
   overflow-y: auto;
   word-break: break-all;
+  border: 1px solid #524f4f;
+  border-radius: 5px;
+  margin: 10px 0;
 }
 .buttons {
   display: flex;

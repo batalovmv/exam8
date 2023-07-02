@@ -12,6 +12,8 @@
 .hero-content {
   text-align: center;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 .hero-content h1 {
   font-size: 56px;

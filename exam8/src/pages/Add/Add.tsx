@@ -31,7 +31,7 @@ export default function Add() {
               return <option value={select.title}>{select.title}</option>;
             })}
           </select>
-
+          Автор :
           <textarea
             name={""}
             value={selectAuthor}
@@ -39,6 +39,7 @@ export default function Add() {
             cols={40}
             onChange={(e) => setSelectAuthor(e.target.value)}
           />
+          Цитата :
           <textarea
             name={""}
             value={selectText}
@@ -46,10 +47,9 @@ export default function Add() {
             cols={40}
             onChange={(e) => setSelectText(e.target.value)}
           />
-
           <NavLink to={`/`} className="site-title">
             <button type="submit" onClick={putInfo}>
-              Обновить данные
+              Отправить цитату
             </button>
           </NavLink>
         </div>
