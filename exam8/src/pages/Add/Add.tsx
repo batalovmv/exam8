@@ -15,7 +15,7 @@ export default function Add() {
   const putInfo = () => {
     axiosInfo.post(`/quotes/.json`, {
       author: selectAuthor,
-      Text: selectText,
+      text: selectText,
       category: selectCategory,
       time: Date.now(),
     });

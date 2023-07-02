@@ -25,13 +25,13 @@ export default function BlockPost(props: Props) {
 
   useEffect(() => {
     getInfo();
-  }, []);
+  }, [props]);
   return (
     <>
       <div>Время :{data.author}</div>
-      <div>Заглавление : {data.Text}</div>
+      <div>Заглавление : {data.text}</div>
       <BasicModal
-        text={data.Text}
+        text={data.text}
         author={data.author}
         category={data.category}
         name={props.name}

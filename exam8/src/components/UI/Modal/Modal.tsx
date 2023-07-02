@@ -40,7 +40,7 @@ export default function BasicModal(props: Props) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Title :{props.title}
+            <h1>Изменить пост</h1>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <Edit

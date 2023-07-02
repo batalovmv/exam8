@@ -11,7 +11,21 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Posts />}></Route>
-          <Route path="/Quotes" element={<Posts />}></Route>
+          <Route path="/all" element={<Posts />}></Route>
+          <Route
+            path="/motivational"
+            element={<Posts category="Motivational" />}
+          ></Route>
+          <Route
+            path="/star-wars"
+            element={<Posts category="Star Wars" />}
+          ></Route>
+          <Route
+            path="/famous-people"
+            element={<Posts category="Famous people" />}
+          ></Route>
+          <Route path="/humour" element={<Posts category="Humour" />}></Route>
+          <Route path="/saying" element={<Posts category="Saying" />}></Route>
           <Route path="/add" element={<Add />}></Route>
         </Route>
       </Routes>

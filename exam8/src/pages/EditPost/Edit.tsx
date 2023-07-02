@@ -19,6 +19,7 @@ export default function Edit(props: Props) {
   const putInfo = () => {
     axiosInfo.put(`/quotes/${props.name}.json`, {
       text: selectText,
+      category: selectCategory,
       author: selectAuthor,
       time: Date.now(),
     });
@@ -29,7 +30,6 @@ export default function Edit(props: Props) {
   // }, []);
   return (
     <>
-      <h1>Изменить пост</h1>
       <select
         onChange={(e) => setSelectCategory(e.target.value)}
         className="selectedPage"
