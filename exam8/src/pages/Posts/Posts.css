@@ -1,0 +1,23 @@
+.hero {
+  height: calc(100vh - 56px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("https://oir.mobi/uploads/posts/2022-08/1661372853_49-oir-mobi-p-rabochii-fon-na-kompyuter-instagram-51.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-content {
+  text-align: center;
+  color: #fff;
+}
+.hero-content h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+.hero-content p {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
