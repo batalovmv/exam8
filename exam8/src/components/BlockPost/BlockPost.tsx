@@ -30,7 +30,12 @@ export default function BlockPost(props: Props) {
     <>
       <div>Время :{data.author}</div>
       <div>Заглавление : {data.Text}</div>
-      <BasicModal text={data.Text} title={data.title} />
+      <BasicModal
+        text={data.Text}
+        author={data.author}
+        category={props.category}
+        name={props.name}
+      />
       <NavLink to={`/edit`} className="site-title">
         <button>Редактировать</button>
       </NavLink>

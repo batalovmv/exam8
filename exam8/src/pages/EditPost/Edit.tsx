@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import axiosInfo from "../../components/GetInfo/axiosInfo";
+import list from "../../data/lists/list";
 import { NavLink } from "react-router-dom";
 interface Props {
   text: string;
@@ -12,6 +13,7 @@ export default function Edit(props: Props) {
   const [info, setInfo] = useState([]);
   const [selectAuthor, setSelectAuthor] = useState(props.author);
   const [selectText, setSelectText] = useState(props.text);
+  const [selectCategory, setSelectCategory] = useState(props.category);
   const [Pages, setPages] = useState([]);
 
   const putInfo = () => {
@@ -27,7 +29,15 @@ export default function Edit(props: Props) {
   // }, []);
   return (
     <>
-      <h1>Add posts</h1>
+      <h1>Изменить пост</h1>
+      <select
+        onChange={(e) => setSelectCategory(e.target.value)}
+        className="selectedPage"
+      >
+        {list.map((select) => {
+          return <option value={select.title}>{select.title}</option>;
+        })}
+      </select>
       <textarea
         name={""}
         value={selectAuthor}

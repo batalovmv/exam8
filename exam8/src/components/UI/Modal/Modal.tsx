@@ -19,7 +19,9 @@ const style = {
 
 interface Props {
   text: string;
-  title: string;
+  author: string;
+  category: string;
+  name: string;
 }
 
 export default function BasicModal(props: Props) {
@@ -41,7 +43,12 @@ export default function BasicModal(props: Props) {
             Title :{props.title}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <Edit />
+            <Edit
+              text={props.text}
+              category={props.category}
+              author={props.author}
+              name={props.name}
+            />
             Text : {props.text}
             Data :{props.data}
           </Typography>
