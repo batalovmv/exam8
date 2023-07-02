@@ -1,22 +1,22 @@
 import "./Add.css";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import list from "../../data/lists/list";
 import axiosInfo from "../../components/GetInfo/axiosInfo";
 import { NavLink } from "react-router-dom";
 
 export default function Add() {
   const [info, setInfo] = useState([]);
-  const [selectTitle, setSelectTitle] = useState("");
-  const [selectContent, setSelectContent] = useState("");
   const [selectAuthor, setSelectAuthor] = useState("");
+  const [selectText, setSelectText] = useState("");
+  const [selectCategory, setSelectCategory] = useState("");
   const [Pages, setPages] = useState([]);
 
   const putInfo = () => {
     axiosInfo.post(`/quotes/.json`, {
       author: selectAuthor,
-      content: selectContent,
-      title: selectTitle,
+      Text: selectText,
+      category: selectCategory,
       time: Date.now(),
     });
   };
@@ -31,7 +31,7 @@ export default function Add() {
   const reloadPage = (text: string) => {
     setSelectPage(text);
     getInfo();
-    setSelectContent(Object.values(info)[Pages.indexOf(text)].content);
+    setSelectText(Object.values(info)[Pages.indexOf(text)].content);
   };
 
   // useEffect(() => {
@@ -46,24 +46,24 @@ export default function Add() {
             onChange={(e) => reloadPage(e.target.value)}
             className="selectedPage"
           >
-            {Pages.map((select) => {
-              return <option value={select}>{select}</option>;
+            {list.map((select) => {
+              return <option value={select.title}>{select.title}</option>;
             })}
           </select>
 
           <textarea
             name={""}
-            value={selectTitle}
+            value={selectAuthor}
             rows={4}
             cols={40}
-            onChange={(e) => setSelectTitle(e.target.value)}
+            onChange={(e) => setSelectAuthor(e.target.value)}
           />
           <textarea
             name={""}
-            value={selectContent}
+            value={selectText}
             rows={4}
             cols={40}
-            onChange={(e) => setSelectContent(e.target.value)}
+            onChange={(e) => setSelectText(e.target.value)}
           />
 
           <NavLink to={`/posts`} className="site-title">
