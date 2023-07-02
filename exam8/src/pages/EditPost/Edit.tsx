@@ -35,7 +35,15 @@ export default function Edit(props: Props) {
         className="selectedPage"
       >
         {list.map((select) => {
-          return <option value={select.title}>{select.title}</option>;
+          if (select.title === selectCategory) {
+            return (
+              <option selected value={select.title}>
+                {select.title}
+              </option>
+            );
+          } else {
+            return <option value={select.title}>{select.title}</option>;
+          }
         })}
       </select>
       <textarea

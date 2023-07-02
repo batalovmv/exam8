@@ -9,7 +9,7 @@ export default function Add() {
   const [info, setInfo] = useState([]);
   const [selectAuthor, setSelectAuthor] = useState("");
   const [selectText, setSelectText] = useState("");
-  const [selectCategory, setSelectCategory] = useState("");
+  const [selectCategory, setSelectCategory] = useState(list[0].title);
   const [Pages, setPages] = useState([]);
 
   const putInfo = () => {
@@ -43,7 +43,7 @@ export default function Add() {
         <div className="hero-content">
           <h1>Add posts</h1>
           <select
-            onChange={(e) => reloadPage(e.target.value)}
+            onChange={(e) => setSelectCategory(e.target.value)}
             className="selectedPage"
           >
             {list.map((select) => {

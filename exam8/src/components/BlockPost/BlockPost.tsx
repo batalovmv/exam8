@@ -33,7 +33,7 @@ export default function BlockPost(props: Props) {
       <BasicModal
         text={data.Text}
         author={data.author}
-        category={props.category}
+        category={data.category}
         name={props.name}
       />
       <NavLink to={`/edit`} className="site-title">
