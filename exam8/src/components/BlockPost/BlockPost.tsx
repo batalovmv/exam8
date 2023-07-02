@@ -29,19 +29,22 @@ export default function BlockPost(props: Props) {
         if (data) {
           return (
             <>
-              <div>Автор :{data.author}</div>
-              <div>Текст : {data.text}</div>
-              <BasicModal
-                text={data.text}
-                author={data.author}
-                category={data.category}
-                name={props.name}
-                status={props.status}
-              />
-              <NavLink to={`/`} className="site-title">
-                <button onClick={removeInfo}>Редактировать</button>
-              </NavLink>
-              <button onClick={removeInfo}>Удалить</button>
+              <div className="block-post">
+                <div className="disctiption">
+                  <div>Автор :{data.author}</div>
+                  <div>Текст : {data.text}</div>
+                </div>
+                <div className="buttons">
+                  <BasicModal
+                    text={data.text}
+                    author={data.author}
+                    category={data.category}
+                    name={props.name}
+                    status={props.status}
+                  />
+                  <button onClick={removeInfo}>Удалить</button>{" "}
+                </div>
+              </div>
             </>
           );
         } else {

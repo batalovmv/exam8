@@ -2,7 +2,6 @@ import "./Posts.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import axiosInfo from "../../components/GetInfo/axiosInfo";
-import { NavLink } from "react-router-dom";
 import BlockPost from "../../components/BlockPost/BlockPost";
 import { NavList } from "../../navbar";
 interface Props {

@@ -21,3 +21,20 @@
   font-size: 22px;
   margin-bottom: 40px;
 }
+.block-post {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  height: 100%;
+  overflow: auto;
+  overflow-y: auto;
+  word-break: break-all;
+}
+.buttons {
+  display: flex;
+  height: 40px;
+}
+.disctiption {
+  text-align: left;
+  max-width: 250px;
+}

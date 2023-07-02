@@ -1,6 +1,5 @@
 import Posts from "./pages/Posts/Posts";
 import Add from "./pages/Add/Add";
-import About from "./pages/About/About";
 import Layout from "./components/Layout/Layout";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
