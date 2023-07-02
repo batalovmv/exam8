@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 
 import axiosInfo from "../../components/GetInfo/axiosInfo";
 import BasicModal from "../UI/Modal/Modal";
-import { NavLink } from "react-router-dom";
 
 interface Props {
   name: string;
-  status: any;
+  status: (status: boolean) => void;
 }
 export default function BlockPost(props: Props) {
   const [data, setData] = useState({});

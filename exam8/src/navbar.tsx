@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import list from "./data/lists/list";
 export function Navbar() {
   return (

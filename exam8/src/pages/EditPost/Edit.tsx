@@ -1,22 +1,18 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import axiosInfo from "../../components/GetInfo/axiosInfo";
 import list from "../../data/lists/list";
-import { NavLink } from "react-router-dom";
 interface Props {
   text: string;
   category: string;
   author: string;
   name: string;
-  status: any;
-  onClose: any;
+  status: (status: boolean) => void;
+  onClose: () => void;
 }
 export default function Edit(props: Props) {
-  const [info, setInfo] = useState([]);
   const [selectAuthor, setSelectAuthor] = useState(props.author);
   const [selectText, setSelectText] = useState(props.text);
   const [selectCategory, setSelectCategory] = useState(props.category);
-  const [Pages, setPages] = useState([]);
 
   const putInfo = async () => {
     await axiosInfo.put(`/quotes/${props.name}.json`, {
@@ -29,9 +25,6 @@ export default function Edit(props: Props) {
     props.onClose();
   };
 
-  // useEffect(() => {
-  //   getInfo();
-  // }, []);
   return (
     <>
       <select

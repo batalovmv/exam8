@@ -22,7 +22,7 @@ interface Props {
   author: string;
   category: string;
   name: string;
-  status: any;
+  status: (status: boolean) => void;
 }
 
 export default function BasicModal(props: Props) {
