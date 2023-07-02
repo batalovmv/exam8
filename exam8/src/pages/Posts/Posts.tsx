@@ -16,9 +16,9 @@ export default function Posts(props: Props) {
   const [selectContent, setSelectContent] = useState("");
   const [Pages, setPages] = useState([]);
 
-  const getInfo = () => {
+  const getInfo = async () => {
     if (props.category) {
-      axiosInfo
+      await axiosInfo
         .get(`/quotes.json?orderBy="category"&equalTo="${props.category}"`)
         .then((response) => {
           setPages(Object.keys(response.data));
@@ -26,7 +26,7 @@ export default function Posts(props: Props) {
           setInfo(response.data);
         });
     } else {
-      axiosInfo.get(`/quotes/.json`).then((response) => {
+      await axiosInfo.get(`/quotes/.json`).then((response) => {
         setPages(Object.keys(response.data));
         console.log(response.data);
         setInfo(response.data);

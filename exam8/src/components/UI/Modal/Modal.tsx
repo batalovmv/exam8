@@ -31,7 +31,7 @@ export default function BasicModal(props: Props) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Read more</Button>
+      <Button onClick={handleOpen}>Изменить Пост</Button>
       <Modal
         open={open}
         onClose={handleClose}
